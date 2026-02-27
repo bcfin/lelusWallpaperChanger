@@ -1,0 +1,200 @@
+{
+  "_metadata": {
+    "version": "1.0.0",
+    "description": "WallpaperChanger Configuration Template",
+    "instructions": "Copy this file to config.json and customize your settings",
+    "last_updated": "2024-02-27"
+  },
+  "api_keys": {
+    "wallhaven": {
+      "key": "your_wallhaven_api_key_here",
+      "description": "Get your API key from https://wallhaven.cc/settings/account",
+      "required": true,
+      "provider": "wallhaven"
+    },
+    "pexels": {
+      "key": "your_pexels_api_key_here", 
+      "description": "Get your API key from https://www.pexels.com/api/new/",
+      "required": true,
+      "provider": "pexels"
+    },
+    "unsplash": {
+      "key": "your_unsplash_access_key_here",
+      "description": "Get your API key from https://unsplash.com/developers",
+      "required": false,
+      "provider": "unsplash"
+    },
+    "pixabay": {
+      "key": "your_pixabay_api_key_here",
+      "description": "Get your API key from https://pixabay.com/api/docs/",
+      "required": false,
+      "provider": "pixabay"
+    },
+    "gemini": {
+      "key": "your_gemini_api_key_here",
+      "description": "Get your API key from https://makersuite.google.com/app/apikey",
+      "required": false,
+      "service": "ai_features"
+    },
+    "openai": {
+      "key": "your_openai_api_key_here",
+      "description": "Get your API key from https://platform.openai.com/api-keys",
+      "required": false,
+      "service": "ai_features_alternative"
+    },
+    "openweather": {
+      "key": "your_openweather_api_key_here",
+      "description": "Get your API key from https://openweathermap.org/api",
+      "required": false,
+      "service": "weather_integration"
+    }
+  },
+  "providers": {
+    "default": "reddit",
+    "rotation_enabled": true,
+    "rotation_sequence": ["wallhaven", "pexels", "reddit"],
+    "wallhaven": {
+      "enabled": true,
+      "categories": ["general", "anime", "people"],
+      "purity": ["sfw"],
+      "sorting": "random",
+      "top_range": "1d",
+      "resolutions": ["1920x1080", "2560x1440", "3840x2160"]
+    },
+    "pexels": {
+      "enabled": true,
+      "mode": "curated",
+      "search_query": "nature",
+      "orientation": "landscape",
+      "size": "large",
+      "color": null
+    },
+    "reddit": {
+      "enabled": true,
+      "user_agent": "WallpaperChanger/1.0 (by u/lelus78)",
+      "subreddits": ["wallpapers", "wallpaper", "EarthPorn", "NatureWallpaper"],
+      "sort": "hot",
+      "time_filter": "day",
+      "limit": 60,
+      "min_width": 1920,
+      "min_height": 1080
+    },
+    "unsplash": {
+      "enabled": false,
+      "search_query": "nature",
+      "orientation": "landscape",
+      "featured": true,
+      "count": 30
+    },
+    "pixabay": {
+      "enabled": false,
+      "search_query": "nature",
+      "image_type": "photo",
+      "orientation": "horizontal",
+      "category": "nature",
+      "min_width": 1920,
+      "min_height": 1080
+    }
+  },
+  "application": {
+    "auto_rotate": true,
+    "change_interval_minutes": 30,
+    "start_minimized": false,
+    "enable_system_tray": true,
+    "check_updates": true,
+    "debug_mode": false
+  },
+  "cache": {
+    "directory": "WallpaperChangerCache",
+    "max_size_mb": 500,
+    "cleanup_interval_hours": 24,
+    "auto_cleanup": true
+  },
+  "downloads": {
+    "directory": "downloads",
+    "max_concurrent": 3,
+    "timeout_seconds": 30,
+    "retry_attempts": 3,
+    "supported_formats": ["jpg", "jpeg", "png", "bmp", "webp"]
+  },
+  "logging": {
+    "level": "INFO",
+    "file": "wallpaper_changer.log",
+    "max_size_mb": 10,
+    "backup_count": 5,
+    "console_output": false
+  },
+  "weather_integration": {
+    "enabled": false,
+    "default_location": "New York,US",
+    "update_interval_minutes": 60,
+    "weather_based_selection": true,
+    "weather_overlays": false
+  },
+  "ai_features": {
+    "enabled": false,
+    "mood_detection": true,
+    "smart_recommendations": true,
+    "auto_categorization": true,
+    "color_analysis": true,
+    "provider": "gemini"
+  },
+  "filters": {
+    "minimum_resolution": {
+      "width": 1920,
+      "height": 1080
+    },
+    "aspect_ratio": {
+      "enabled": true,
+      "tolerance": 0.2,
+      "preferred": ["16:9", "16:10", "21:9"]
+    },
+    "file_size": {
+      "min_mb": 0.5,
+      "max_mb": 50
+    },
+    "content_filters": {
+      "nsfw": false,
+      "violence": false,
+      "adult": false
+    }
+  },
+  "monitors": {
+    "multi_monitor_support": true,
+    "span_mode": false,
+    "per_monitor_settings": {
+      "1": {
+        "enabled": true,
+        "provider": "default",
+        "filters": {}
+      },
+      "2": {
+        "enabled": true,
+        "provider": "default", 
+        "filters": {}
+      }
+    }
+  },
+  "shortcuts": {
+    "hotkeys": {
+      "next_wallpaper": "ctrl+alt+n",
+      "previous_wallpaper": "ctrl+alt+p",
+      "pause_rotation": "ctrl+alt+space",
+      "show_gui": "ctrl+alt+w",
+      "settings": "ctrl+alt+s"
+    }
+  },
+  "notifications": {
+    "enabled": true,
+    "wallpaper_changed": true,
+    "errors": true,
+    "updates": true,
+    "sound_enabled": false
+  },
+  "backup": {
+    "enabled": true,
+    "interval_days": 7,
+    "max_backups": 10,
+    "backup_directory": "backups"
+  }
+}

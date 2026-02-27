@@ -1,0 +1,68 @@
+*.pyc
+__pycache__/
+
+# Environment variables and API keys
+.env
+.env.local
+
+# Temporary files
+temp.txt
+*.tmp
+nul
+*.zip
+*.log
+
+# Cache and wallpaper files
+WallpaperChangerCache/
+wallpaper*.jpg
+wallpaper*.bmp
+wallpaper*.png
+provider_state.json
+
+# PID file and runtime files
+wallpaperchanger.pid
+wallpaperchanger.log
+wallpaperchanger.signal
+gui_config.pid
+gui_modern.pid
+gui_restore.signal
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+.claude/settings.local.json
+
+# One-time setup/fix scripts (already applied)
+apply_weather_config.py
+enable_weather_quick.py
+fix_playlist_providers.py
+update_config_final.py
+playlists_config.txt
+
+# Test scripts (keep locally for debugging)
+test_*.py
+
+# Development/experimental files
+weather_rotation.py
+playlist_manager.py
+
+# Generated data files
+current_wallpaper_info.json
+wallpaper_stats.json
+monitors_status.json
+
+# Gemini generated files
+.genkit/
+
+# Marketing materials (keep local only)
+marketing/
+
+# Crash reports (contain sensitive user data)
+crash_report_*.txt

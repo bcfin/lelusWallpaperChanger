@@ -1,0 +1,13 @@
+pillow>=10.0.0
+requests>=2.31.0
+pystray>=0.19.4
+keyboard>=0.13.5
+python-dotenv>=1.0.0
+customtkinter>=5.2.0
+psutil>=5.9.0
+matplotlib>=3.7.0
+google-generativeai>=0.3.0
+colorthief>=0.2.1
+imagehash>=4.3.0
+screeninfo>=0.8.1
+scipy>=1.11.0
